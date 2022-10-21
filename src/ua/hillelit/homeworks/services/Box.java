@@ -4,19 +4,18 @@ import ua.hillelit.homeworks.fruits.Fruit;
 
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Box<T extends Fruit> {
-    private ArrayList<T> box;
+    private ArrayList<T> listBox;
     private float weightOfBox;
 
     public Box(ArrayList<T> box) {
-        this.box = box;
+        this.listBox = box;
     }
 
     void print() {
-        for (T t : this.box) {
+        for (T t : this.listBox) {
             System.out.println(t.getWeight() + "\t");
         }
         System.out.println();
@@ -25,7 +24,7 @@ public class Box<T extends Fruit> {
     boolean addOneFruit(T fruit) {
         try {
             if (this.getBox().get(0).getClass().equals(fruit.getClass())) {
-                this.box.add(fruit);
+                this.listBox.add(fruit);
                 return true;
             } else {
                 System.out.println("Яблоки не могут лежать с апельсинами");
@@ -40,7 +39,7 @@ public class Box<T extends Fruit> {
     boolean addFruits(T[] fruit) {
         try {
             if (this.getBox().get(0).getClass().equals(fruit.getClass())) {
-                this.box.addAll(List.of(fruit));
+                this.listBox.addAll(List.of(fruit));
                 return true;
             } else {
                 System.out.println("Яблоки не могут лежать с апельсинами");
@@ -54,7 +53,7 @@ public class Box<T extends Fruit> {
 
     float getWeight() {
         float weightOfBox = 0;
-        for (T t : this.box) {
+        for (T t : this.listBox) {
             weightOfBox += t.getWeight();
         }
         this.weightOfBox = weightOfBox;
@@ -76,7 +75,7 @@ public class Box<T extends Fruit> {
     boolean merge(ArrayList<T> arrayList) {
         try {
             if (this.getBox().get(0).getClass().equals(arrayList.get(0).getClass())) {
-                this.box.addAll(arrayList);
+                this.listBox.addAll(arrayList);
                 return true;
             } else {
                 System.out.println("Яблоки не могут лежать с апельсинами");
@@ -89,18 +88,10 @@ public class Box<T extends Fruit> {
     }
 
     public ArrayList<T> getBox() {
-        return box;
+        return listBox;
     }
 
     public void setBox(ArrayList<T> box) {
-        this.box = box;
-    }
-
-    public float getWeightOfBox() {
-        return weightOfBox;
-    }
-
-    public void setWeightOfBox(float weightOfBox) {
-        this.weightOfBox = weightOfBox;
+        this.listBox = box;
     }
 }
