@@ -6,7 +6,6 @@ import ua.hillelit.homeworks.fruits.Orange;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.List;
 
 public class Main {
@@ -21,15 +20,15 @@ public class Main {
 
         Apple []appleArray = {apple1, apple2};
 
-        ArrayList<Apple> appleBox = new ArrayList<>();
+        List<Apple> appleBox = new ArrayList<>();
         appleBox.add(apple1);
         appleBox.add(apple2);
 
-        ArrayList<Apple> appleBox2 = new ArrayList<>();
+        List<Apple> appleBox2 = new ArrayList<>();
         appleBox2.add(apple4);
         appleBox2.add(apple3);
 
-        ArrayList<Orange> orangeBox = new ArrayList<>();
+        List<Orange> orangeBox = new ArrayList<>();
         orangeBox.add(orange1);
         orangeBox.add(orange2);
 
@@ -44,8 +43,8 @@ public class Main {
 
     }
 
-    public static ArrayList<Fruit> toList(Fruit []array) {
-        ArrayList<Fruit> list = (ArrayList<Fruit>) Arrays.asList(array);
+    public static List<Fruit> toList(Fruit []array) {
+        List<Fruit> list = Arrays.asList(array);
         return list;
     }
 }

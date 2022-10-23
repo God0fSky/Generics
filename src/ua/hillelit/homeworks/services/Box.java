@@ -1,16 +1,13 @@
 package ua.hillelit.homeworks.services;
 
 import ua.hillelit.homeworks.fruits.Fruit;
-
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class Box<T extends Fruit> {
-    private ArrayList<T> listBox;
+    private List<T> listBox;
     private float weightOfBox;
 
-    public Box(ArrayList<T> box) {
+    public Box(List<T> box) {
         this.listBox = box;
     }
 
@@ -72,7 +69,7 @@ public class Box<T extends Fruit> {
         return false;
     }
 
-    boolean merge(ArrayList<T> arrayList) {
+    boolean merge(List<T> arrayList) {
         try {
             if (this.getBox().get(0).getClass().equals(arrayList.get(0).getClass())) {
                 this.listBox.addAll(arrayList);
@@ -87,11 +84,11 @@ public class Box<T extends Fruit> {
         }
     }
 
-    public ArrayList<T> getBox() {
+    public List<T> getBox() {
         return listBox;
     }
 
-    public void setBox(ArrayList<T> box) {
+    public void setBox(List<T> box) {
         this.listBox = box;
     }
 }
